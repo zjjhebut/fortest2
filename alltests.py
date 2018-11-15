@@ -18,4 +18,6 @@ def suite():
     return alltests
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HTMLTestRunner.HTMLTestRunner(),defaultTest='suite')
+    fp = file('my_report.html','wb')
+    unittest.main(testRunner=HTMLTestRunner.HTMLTestRunner(stream=fp,title="my test",description="test"),defaultTest='suite')
+    fp.close()
