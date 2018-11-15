@@ -8,6 +8,7 @@
 # $Id: alltests.py,v 1.3 2001/03/12 11:52:56 purcell Exp $
 
 import unittest
+import HTMLTestRunner
 
 def suite():
     modules_to_test = ('listtests', 'widgettests') # and so on
@@ -17,4 +18,4 @@ def suite():
     return alltests
 
 if __name__ == '__main__':
-    unittest.main(defaultTest='suite')
+    unittest.main(testRunner=HTMLTestRunner.HTMLTestRunner(),defaultTest='suite')
